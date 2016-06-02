@@ -23,10 +23,11 @@ func addKey(key, value []byte) error {
 func findKey(key []byte) []byte {
 	var value []byte
 
-	db.View(func(tx *bolt.Tx) error {
+	err := db.View(func(tx *bolt.Tx) error {
 		b := tx.Bucket(dbBucket)
 		value = b.Get(key)
 		return nil
 	})
+	log.Print(err)
 	return value
 }
