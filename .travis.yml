@@ -1,0 +1,9 @@
+language: go
+
+go:
+      - 1.6
+install:
+        - go get -u github.com/labstack/echo/...
+        - go get -u github.com/boltdb/bolt/...
+        - go get -u github.com/kisielk/errcheck
+        - go get -u github.com/golang/lint/golint
